@@ -21,3 +21,13 @@
 | dim_tempo        | Dia          | Integer      | Dia da compra                                                   |
 | dim_tempo        | DiaSemana    | Integer      | Dia da semana (1=Domingo a 7=Sábado)                            |
 | vendas_flat      | *            | Diversos     | Junção de fato com todas as dimensões
+
+
+# Linhagem dos Dados
+A EXT foi feita do repositório do KAGGLE (https://www.kaggle.com/datasets/jihyeseo/online-retail-data-set-from-uci-ml-repo?resource=download). 
+É uma base de uma loja de E-Commerce localizada no Reino Unido com as suas vendas durante os anos de 2010 e 2011. 
+
+### Técnicas de modelagem e transformação aplicadas:
+- ** Camada Bronze: Ingestão direta dos dados, sem tratamento e diagnóstico do que necessitaria de uma transformação na próxima camada.
+- ** Camada Silver: Transformações, e criação das tbls de dimensão ('dim_produto', 'dim_cliente' e 'dim_tempo') e da tabela 'fato_vendas'. 
+- ** Camada Ouro: Criação da tabela 'vendas_flat', a partir da junção da tabela fato com as tabelas de dimensão para fazermos as análises voltadas ao negócio. 
